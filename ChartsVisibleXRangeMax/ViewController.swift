@@ -45,7 +45,10 @@ class ViewController: UIViewController {
         chartView.data = data
         
         if values.count > Int(maxValuesInViewport) {
+            // when this is triggered, X-axis values automatically increment by 0.7
+            // and circles are no longer aligned with their X-axis values
             chartView.setVisibleXRangeMaximum(maxValuesInViewport)
+            chartView.setNeedsDisplay()
         }
     }
 
